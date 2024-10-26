@@ -1,0 +1,37 @@
+name: Test Cliff Notes
+
+on:
+  pull_request:
+    types: [ closed ]
+    branches: [ "main" ]
+
+jobs:
+  changelog:
+    name: Generate changelog
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate changelog
+        uses: orhun/git-cliff-action@v4
+        with:
+          config: cliff.toml
+          args: --verbose
+        env:
+          OUTPUT: CHANGELOG.md
+          GITHUB_REPO: nickscip/cicd-testing
+
+      - name: Commit
+        run: |
+          git checkout <branch>
+          git config user.name 'nickscip'
+          git config user.email 'nickscip@gmail.com'
+          set +e
+          git add CHANGELOG.md
+          git commit -m "Update changelog"
+          git push https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git <branch>
