@@ -2,11 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
-## [unreleased]
+## [0.1.0] - 2024-10-26
 
 ### 🚀 Features
 
 - Workflow release.yml
+- Mars
+- Jupiter
+
+### 🐛 Bug Fixes
+
+- Saturn
 
 ### 📚 Documentation
 
