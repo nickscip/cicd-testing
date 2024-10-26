@@ -21,7 +21,7 @@ jobs:
         uses: orhun/git-cliff-action@v4
         with:
           config: cliff.toml
-          args: --verbose --latest --bump -p CHANGELOG.md
+          args: --verbose --latest --bump
         env:
           OUTPUT: CHANGELOG.md
           GITHUB_REPO: nickscip/cicd-testing
