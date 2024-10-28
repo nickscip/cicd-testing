@@ -7,6 +7,11 @@ All notable changes to this project will be documented in this file.
 ### 🐛 Bug Fixes
 
 - Push to dev as well
+- Push to dev as well
+- Push to dev as well
+- Push to dev as well
+- Push to dev as well
+- Remove git add from main
 
 ## [0.4.3] - 2024-10-28
 
