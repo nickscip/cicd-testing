@@ -28,7 +28,7 @@ echo "NEW_TAG=$NEW_TAG"
 poetry version "$NEW_TAG"
 
 git add CHANGELOG.md pyproject.toml
-git commit -m "chore(release): prepare changelog for $NEW_TAG"
+git commit -m "chore(release): prepare for $NEW_TAG"
 git push
 
 git tag "$NEW_TAG"
