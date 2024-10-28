@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.1] - 2024-10-28
+
+### 🐛 Bug Fixes
+
+- Jackson
+
 ## [0.6.0] - 2024-10-28
 
 ### 🚀 Features
