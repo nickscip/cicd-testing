@@ -4,7 +4,10 @@
 set -e
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 if ! [ -x "$(command -V git-cliff)" ]; then
         echo 'Error: git-cliff is not installed.' >&2
         exit 1
@@ -20,6 +23,9 @@ if ! [ -x "$(command --version gh)" ]; then
         exit 1
 fi
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 REPO="https://$GH_TOKEN@github.com/$https://github.com/nickscip/cicd-testing.git"
 MAIN_BRANCH="main"
@@ -29,11 +35,14 @@ git checkout $MAIN_BRANCH
 git fetch --all
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 echo "Setting up Python environment"
 python3 -m pip install --upgrade pip
 if [ -f requirements/requirements.ci.txt ]; then
   pip install -r requirements/requirements.ci.txt
 fi
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
