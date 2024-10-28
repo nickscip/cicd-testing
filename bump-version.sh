@@ -36,7 +36,7 @@ gh release create "$NEW_TAG" -t "$NEW_TAG" --generate-notes
 
 echo "Updating dev branch"
 git checkout dev
-git pull --rebase
+git rebase main
 git push
 
 echo "Script completed successfully!"
