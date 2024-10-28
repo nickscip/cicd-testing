@@ -1,4 +1,5 @@
-# This script bumps the project's version number, creates a new tag, and updates the CHANGELOG.md file.
+# This script bumps the project's version number, creates a new tag, update the CHANGELOG.md file, and create a GitHub release.
+# By the end of the script, the dev branch is updated with the latest changes from the main branch.
 #!/bin/bash
 
 set -e
@@ -36,8 +37,8 @@ git push
 git tag "$NEW_TAG"
 git push --tags
 
-# echo "Creating GitHub release for tag $NEW_TAG"
-# gh release create "$NEW_TAG" -F CHANGELOG.md -t "$NEW_TAG" --repo "$GITHUB_REPOSITORY" --generate-notes
+echo "Creating GitHub release for tag $NEW_TAG"
+gh release create "$NEW_TAG" -t "$NEW_TAG" --generate-notes
 
 echo "Updating dev branch"
 git pull
