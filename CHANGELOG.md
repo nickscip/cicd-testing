@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.1] - 2024-10-28
+
+### 🐛 Bug Fixes
+
+- Madison
+
 ## [0.3.0] - 2024-10-28
 
 ### 🚀 Features
@@ -12,6 +18,7 @@ All notable changes to this project will be documented in this file.
 
 - Release
 - Jefferson
+- JQ Adams
 
 ### ⚙️ Miscellaneous Tasks
 
