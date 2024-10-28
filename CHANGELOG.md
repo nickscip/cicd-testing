@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.1] - 2024-10-28
+
+### Build
+
+- Gen release from changelog
+- Gen release from changelog 2
+
 ## [0.4.0] - 2024-10-28
 
 ### 🚀 Features
