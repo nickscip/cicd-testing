@@ -47,7 +47,7 @@ jobs:
       - name: Upload the binary releases
         uses: svenstaro/upload-release-action@v2
         with:
-          file: binary_release.zip
+          file: CHANGELOG.md
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ env.NEW_TAG }}
           body: ${{ steps.git-cliff.outputs.content }}
