@@ -33,6 +33,9 @@ git add -A
 git commit -m "Update changelog"
 git push
 
+git tag "$NEW_TAG"
+git push --tags
+
 # echo "Creating GitHub release for tag $NEW_TAG"
 # gh release create "$NEW_TAG" -F CHANGELOG.md -t "$NEW_TAG" --repo "$GITHUB_REPOSITORY" --generate-notes
 
