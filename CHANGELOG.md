@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file.
 
 - Add pytest for test
 - Remove pytest
+- Tagging
 
 ## [0.3.1] - 2024-10-28
 
