@@ -7,13 +7,13 @@ repos:
       -   id: poetry-install
       -   id: poetry-export
           name: poetry-export-default
-          args: ["--without-hashes", "-f",  "requirements.txt", "-o", "requirements/requirements.txt", "--without", "dev, test"]
-      -   id: poetry-export
-          name: poetry-export-dev
-          args: ["--without-hashes", "-f",  "requirements.txt", "-o", "requirements/requirements.dev.txt", "--only", "dev"]
-      -   id: poetry-export
-          name: poetry-export-test
-          args: ["--without-hashes", "-f",  "requirements.txt", "-o", "requirements/requirements.test.txt", "--only", "test"]
+          args: ["--without-hashes", "-f",  "requirements.txt", "-o", "requirements/requirements.txt"]
+      # -   id: poetry-export
+      #     name: poetry-export-dev
+      #     args: ["--without-hashes", "-f",  "requirements.txt", "-o", "requirements/requirements.dev.txt", "--only", "dev"]
+      # -   id: poetry-export
+      #     name: poetry-export-test
+      #     args: ["--without-hashes", "-f",  "requirements.txt", "-o", "requirements/requirements.test.txt", "--only", "test"]
     - repo: https://github.com/astral-sh/ruff-pre-commit
       rev: v0.4.3
       hooks:
