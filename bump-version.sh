@@ -35,7 +35,7 @@ poetry version "$NEW_TAG"
 
 git config user.name 'nickscip'
 git config user.email 'nickscip@gmail.com'
-git add CHANGELOG.md pyproject.toml
+git add -A
 git commit -m "Update changelog"
 git push "$REPO" "$MAIN_BRANCH"
 

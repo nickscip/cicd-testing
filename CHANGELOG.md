@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.0] - 2024-10-28
+
+### 🚀 Features
+
+- Create bump version script
+- Create bump version script
+
+### 🐛 Bug Fixes
+
+- Use python3
+- Remove python installs. check for packages first
+- Remove python installs. check for packages first
+- Remove python installs. check for packages first
+- Remove python installs. check for packages first
+
+### Wip
+
+- Coment out release
+
 ## [0.5.1] - 2024-10-28
 
 ### 🐛 Bug Fixes
