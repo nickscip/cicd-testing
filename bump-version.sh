@@ -3,17 +3,17 @@
 
 set -e
 
-if ! [ -x "$(command -V git-cliff)" ]; then
+if ! [ -x "$(command -v git-cliff)" ]; then
         echo 'Error: git-cliff is not installed.' >&2
         exit 1
 fi
 
-if ! [ -x "$(command -V poetry)" ]; then
+if ! [ -x "$(command -v poetry)" ]; then
         echo 'Error: poetry is not installed.' >&2
         exit 1
 fi
 
-if ! [ -x "$(command --version gh)" ]; then
+if ! [ -x "$(command -v gh)" ]; then
         echo 'Error: gh is not installed.' >&2
         exit 1
 fi
