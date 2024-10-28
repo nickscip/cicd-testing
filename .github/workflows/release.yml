@@ -26,7 +26,8 @@ jobs:
           cache: 'pip'
       - name: Install Git-cliff
         run: |
-          python -m pip install --upgrade pip git-cliff
+          python -m pip install --upgrade pip
+          if [ -f requirements/requirements.txt ]; then pip install -r requirements/requirements.txt; fi
       - name: Generate changelog
         id: git-cliff
         run: |

@@ -1,0 +1,44 @@
+repos:
+    - repo: https://github.com/python-poetry/poetry
+      rev: '1.8.2'  # add version here
+      hooks:
+      -   id: poetry-check
+      -   id: poetry-lock      
+      -   id: poetry-install
+      -   id: poetry-export
+          name: poetry-export-default
+          args: ["--without-hashes", "-f",  "requirements.txt", "-o", "requirements/requirements.txt", "--without", "dev, test"]
+      -   id: poetry-export
+          name: poetry-export-dev
+          args: ["--without-hashes", "-f",  "requirements.txt", "-o", "requirements/requirements.dev.txt", "--only", "dev"]
+      -   id: poetry-export
+          name: poetry-export-test
+          args: ["--without-hashes", "-f",  "requirements.txt", "-o", "requirements/requirements.test.txt", "--only", "test"]
+    - repo: https://github.com/astral-sh/ruff-pre-commit
+      rev: v0.4.3
+      hooks:
+        - id: ruff
+        - id: ruff-format
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v4.6.0
+      hooks:
+        - id: check-added-large-files
+          args: ["--maxkb=50000"]
+    - repo: local
+      hooks:
+        - id: pytest-check
+          name: pytest-check
+          entry: poetry run pytest -m "not slow"
+          language: system
+          types: [python]
+          pass_filenames: false
+          stages: [pre-commit]
+    - repo: local
+      hooks:
+        - id: pytest-check
+          name: pytest-check
+          entry: poetry run pytest
+          language: system
+          types: [python]
+          pass_filenames: false
+          stages: [pre-push, pre-merge-commit, pre-rebase]

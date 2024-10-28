@@ -1,0 +1,10 @@
+[tool.poetry]
+name = "ci-cd-test"
+version = "0.1.0"
+description = "testing for andi ci/cd"
+authors = ["nick <nick.scipione@valkyrie.ai>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+git-cliff = "^2.6.1"
