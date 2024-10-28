@@ -1,0 +1,1 @@
+git-cliff==2.6.1 ; python_version >= "3.12" and python_version < "4.0"

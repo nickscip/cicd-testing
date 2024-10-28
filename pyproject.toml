@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "ci-cd-test"
+version = "0.1.0"
+description = "testing for andi ci/cd"
+authors = ["nick <nick.scipione@valkyrie.ai>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+git-cliff = "^2.6.1"
+
+[tool.poetry.plugins."poetry.application.plugin"]
+export = "poetry_plugin_export.plugins:ExportApplicationPlugin"
+
+[tool.ruff]
+line-length = 120
+lint.select = ["I"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
