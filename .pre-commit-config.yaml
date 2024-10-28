@@ -15,7 +15,7 @@ repos:
       #     name: poetry-export-test
       #     args: ["--without-hashes", "-f",  "requirements.txt", "-o", "requirements/requirements.test.txt", "--only", "test"]
       -   id: poetry-export
-          name: poetry-export-default
+          name: poetry-export-ci
           args: ["--without-hashes", "-f",  "requirements.txt", "-o", "requirements/requirements.ci.txt", "--only", "ci"]
     - repo: https://github.com/astral-sh/ruff-pre-commit
       rev: v0.4.3
