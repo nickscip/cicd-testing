@@ -41,8 +41,7 @@ jobs:
           git config user.email 'nickscip@gmail.com'
           git add CHANGELOG.md
           git commit -m "Update changelog"
-          git checkout dev
-          git push https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git dev
+          git push https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git
 
       - name: Commit to main
         run: |
