@@ -2,11 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.7.2] - 2024-10-28
+
+### 🐛 Bug Fixes
+
+- Rebase dev to main
+
 ## [0.7.1] - 2024-10-28
 
 ### 🐛 Bug Fixes
 
 - Refactor bash script
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Prepare changelog for v0.7.1
 
 ## [0.7.0] - 2024-10-28
 
