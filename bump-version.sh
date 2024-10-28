@@ -3,7 +3,7 @@
 
 set -e
 
-REPO="https://$GH_TOKEN@github.com/$GITHUB_REPOSITORY.git"
+REPO="https://$GH_TOKEN@github.com/$https://github.com/nickscip/cicd-testing.git"
 MAIN_BRANCH="main"
 DEV_BRANCH="dev"
 
