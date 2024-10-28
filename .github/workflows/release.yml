@@ -9,6 +9,8 @@ jobs:
   changelog:
     name: Generate changelog
     runs-on: ubuntu-latest
+    outputs:
+      release_body: ${{ steps.git-cliff.outputs.content }}
     permissions:
       contents: write
     steps:
@@ -17,14 +19,19 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Generate changelog
-        uses: orhun/git-cliff-action@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          config: cliff.toml
-          args: --verbose --bump
-        env:
-          OUTPUT: CHANGELOG.md
-          GITHUB_REPO: nickscip/cicd-testing
+          python-version: ^3.12
+          cache: 'pip'
+      - name: Install Git-cliff
+        run: |
+          python -m pip install --upgrade pip
+          pip install git-cliff
+      - name: Generate changelog
+        id: git-cliff
+        run: |
+          git-cliff --verbose --bump -o CHANGELOG.md
 
       - name: Commit
         run: |
@@ -34,3 +41,11 @@ jobs:
           git add CHANGELOG.md
           git commit -m "Update changelog"
           git push https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git main
+
+      - name: Upload the binary releases
+        uses: svenstaro/upload-release-action@v2
+        with:
+          file: binary_release.zip
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          tag: 
+          body: ${{ steps.git-cliff.outputs.content }}
