@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.2] - 2024-10-28
+
+### Build
+
+- Change body path
+
 ## [0.4.1] - 2024-10-28
 
 ### Build
