@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.5] - 2024-10-28
+
+### 🐛 Bug Fixes
+
+- Remove explicit dev name from commit to dev
+
 ## [0.4.4] - 2024-10-28
 
 ### 🐛 Bug Fixes
