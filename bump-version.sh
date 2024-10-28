@@ -31,15 +31,15 @@ poetry version "$NEW_TAG"
 
 git add -A
 git commit -m "Update changelog"
-git push main
+git push
 
 # echo "Creating GitHub release for tag $NEW_TAG"
 # gh release create "$NEW_TAG" -F CHANGELOG.md -t "$NEW_TAG" --repo "$GITHUB_REPOSITORY" --generate-notes
 
 echo "Updating dev branch"
-git pull main
+git pull
 git checkout dev
 git rebase main
-git push dev
+git push
 
 echo "Script completed successfully!"
