@@ -35,19 +35,13 @@ jobs:
       - name: Set tag env variable
         run: echo "NEW_TAG=$(git cliff --bumped-version)" >> $GITHUB_ENV
 
-      - name: Commit to dev
-        run: |
-          git config user.name 'nickscip'
-          git config user.email 'nickscip@gmail.com'
-          git add CHANGELOG.md
-          git commit -m "Update changelog"
-          git push https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git
-
       - name: Commit to main
         run: |
           git checkout main
           git config user.name 'nickscip'
           git config user.email 'nickscip@gmail.com'
+          git add CHANGELOG.md
+          git commit -m "Update changelog"
           git push https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git main
 
       - name: Upload the release
@@ -56,3 +50,10 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag_name: ${{ env.NEW_TAG }}
           generate_release_notes: true
+
+      - name: Update dev
+        run: |
+          git pull
+          git checkout dev
+          git rebase main
+          git push https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git dev
