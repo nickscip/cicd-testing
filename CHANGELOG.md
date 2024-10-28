@@ -19,6 +19,7 @@ All notable changes to this project will be documented in this file.
 - Stuff
 - Stuff
 - Remove env vars
+- Remove env vars
 
 ### Wip
 
