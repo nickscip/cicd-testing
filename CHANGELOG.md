@@ -2,11 +2,30 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.0] - 2024-10-28
+
+### 🚀 Features
+
+- Added a bunch of env stuff
+
+### ⚙️ Miscellaneous Tasks
+
+- Update pip install
+
+### Build
+
+- Add pytest for test
+- Remove pytest
+
 ## [0.3.1] - 2024-10-28
 
 ### 🐛 Bug Fixes
 
 - Madison
+
+### ⚙️ Miscellaneous Tasks
+
+- Manually install git cliff in ci pipeline
 
 ## [0.3.0] - 2024-10-28
 
