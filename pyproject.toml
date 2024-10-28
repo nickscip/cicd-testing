@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ci-cd-test"
-version = "v0.6.2"
+version = "v0.7.0"
 description = "testing for andi ci/cd"
 authors = ["nick <nick.scipione@valkyrie.ai>"]
 readme = "README.md"
