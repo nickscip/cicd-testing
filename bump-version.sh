@@ -11,7 +11,7 @@ git checkout $MAIN_BRANCH
 git fetch --all
 
 echo "Setting up Python environment"
-python -m pip install --upgrade pip
+python3 -m pip install --upgrade pip
 if [ -f requirements/requirements.ci.txt ]; then
   pip install -r requirements/requirements.ci.txt
 fi
