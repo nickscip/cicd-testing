@@ -1,13 +1,16 @@
 [tool.poetry]
 name = "ci-cd-test"
-version = "0.1.0"
+version = "0.4.6"
 description = "testing for andi ci/cd"
 authors = ["nick <nick.scipione@valkyrie.ai>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
+
+[tool.poetry.group.ci.dependencies]
 git-cliff = "^2.6.1"
+poetry = "^1.8.4"
 
 [tool.poetry.plugins."poetry.application.plugin"]
 export = "poetry_plugin_export.plugins:ExportApplicationPlugin"
