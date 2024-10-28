@@ -32,6 +32,8 @@ jobs:
         id: git-cliff
         run: |
           git-cliff --verbose --bump -o CHANGELOG.md
+      - name: Set tag env variable
+        run: echo "NEW_TAG=$(git cliff --bumped-version)" >> $GITHUB_ENV
 
       - name: Commit
         run: |
@@ -47,5 +49,5 @@ jobs:
         with:
           file: binary_release.zip
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          tag: 
+          tag: ${{ env.NEW_TAG }}
           body: ${{ steps.git-cliff.outputs.content }}
