@@ -23,10 +23,10 @@ MAIN_BRANCH="main"
 DEV_BRANCH="dev"
 
 git checkout $MAIN_BRANCH
-git fetch --all
+git pull
 
 echo "Generating changelog"
-git-cliff --verbose --bump -o CHANGELOG.md
+git cliff --verbose --bump -o CHANGELOG.md
 
 NEW_TAG=$(git cliff --bumped-version)
 echo "NEW_TAG=$NEW_TAG"
