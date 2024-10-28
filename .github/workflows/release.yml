@@ -37,6 +37,7 @@ jobs:
 
       - name: Commit to dev
         run: |
+          git checkout dev
           git config user.name 'nickscip'
           git config user.email 'nickscip@gmail.com'
           git add CHANGELOG.md
