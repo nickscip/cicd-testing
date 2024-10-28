@@ -49,4 +49,4 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag_name: ${{ env.NEW_TAG }}
-          body_path: ${{ steps.git-cliff.outputs.content }}
+          body_path: CHANGELOG.md
