@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.2] - 2024-10-28
+
+### 🐛 Bug Fixes
+
+- Rm release
+
 ## [0.6.1] - 2024-10-28
 
 ### 🐛 Bug Fixes
