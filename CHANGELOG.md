@@ -2,11 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.7.4] - 2024-10-28
+
+### 🐛 Bug Fixes
+
+- Make sure chore(release) is not added to changelog
+
+### ⚙️ Miscellaneous Tasks
+
+- Rename script
+
 ## [0.7.3] - 2024-10-28
 
 ### 🐛 Bug Fixes
 
 - Check for uncommmited changes
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Prepare changelog for v0.7.3
 
 ## [0.7.2] - 2024-10-28
 
