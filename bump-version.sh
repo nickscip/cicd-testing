@@ -3,6 +3,24 @@
 
 set -e
 
+<<<<<<< Updated upstream
+=======
+if ! [ -x "$(command -V git-cliff)" ]; then
+        echo 'Error: git-cliff is not installed.' >&2
+        exit 1
+fi
+
+if ! [ -x "$(command -V poetry)" ]; then
+        echo 'Error: poetry is not installed.' >&2
+        exit 1
+fi
+
+if ! [ -x "$(command --version gh)" ]; then
+        echo 'Error: gh is not installed.' >&2
+        exit 1
+fi
+
+>>>>>>> Stashed changes
 REPO="https://$GH_TOKEN@github.com/$https://github.com/nickscip/cicd-testing.git"
 MAIN_BRANCH="main"
 DEV_BRANCH="dev"
@@ -10,11 +28,14 @@ DEV_BRANCH="dev"
 git checkout $MAIN_BRANCH
 git fetch --all
 
+<<<<<<< Updated upstream
 echo "Setting up Python environment"
 python3 -m pip install --upgrade pip
 if [ -f requirements/requirements.ci.txt ]; then
   pip install -r requirements/requirements.ci.txt
 fi
+=======
+>>>>>>> Stashed changes
 
 echo "Generating changelog"
 git-cliff --verbose --bump -o CHANGELOG.md
