@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "ci-cd-test"
+name = "sem-verified-ci"
 version = "v0.8.1"
-description = "testing for andi ci/cd"
-authors = ["nick <nick.scipione@valkyrie.ai>"]
+description = "ci/cd workflow and script for automatic semantic versioning and changelog generation"
+authors = ["nick <nickscip@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
