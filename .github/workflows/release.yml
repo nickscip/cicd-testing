@@ -1,0 +1,62 @@
+name: Semantic Release
+
+on:
+  pull_request:
+    types: [ closed ]
+    branches: [ "main" ]
+
+jobs:
+  changelog:
+    name: Generate changelog
+    runs-on: ubuntu-latest
+    outputs:
+      release_body: ${{ steps.git-cliff.outputs.content }}
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ^3.12
+          cache: 'pip'
+
+      - name: Install Git-cliff
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements/requirements.ci.txt ]; then pip install -r requirements/requirements.ci.txt; fi
+      - name: Generate changelog
+        id: git-cliff
+        run: |
+          git-cliff --verbose --bump -o CHANGELOG.md
+      - name: Set tag env variable
+        run: echo "NEW_TAG=$(git cliff --bumped-version)" >> $GITHUB_ENV
+
+      - name: Update pyproject.toml
+        run: poetry version ${{ env.NEW_TAG }}
+
+      - name: Commit to main
+        run: |
+          git checkout main
+          git config user.name 'nickscip'
+          git config user.email 'nickscip@gmail.com'
+          git add CHANGELOG.md pyproject.toml
+          git commit -m "Update changelog"
+          git push https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git main
+      - name: Upload the release
+        uses: softprops/action-gh-release@v2
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          tag_name: ${{ env.NEW_TAG }}
+          generate_release_notes: true
+
+      - name: Update dev
+        run: |
+          git pull
+          git checkout dev
+          git rebase main
+          git push https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git dev
