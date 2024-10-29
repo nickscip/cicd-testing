@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.8.0] - 2024-10-29
+
+### 🚀 Features
+
+- Bring back workflow
+
 ## [0.7.4] - 2024-10-28
 
 ### 🐛 Bug Fixes
