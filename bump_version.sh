@@ -13,10 +13,10 @@ for cmd in git-cliff poetry gh; do
     fi
 done
 
-git checkout main
-if ! git diff-index HEAD; then
+if ! git diff-index --quiet HEAD; then
         error_exit "Working directory is not clean. Please commit or stash your changes."
-        fi
+fi
+git checkout main
 git pull
 
 echo "Generating changelog"
